@@ -3,4 +3,3 @@ pandas
 plotly
 numpy
 nsepython
-sqlite3-binary

@@ -6,17 +6,16 @@ from datetime import datetime
 import os
 import subprocess
 
-if st.sidebar.button("🔄 Refresh VRP Data"):
-    with st.spinner("Refreshing VRP data..."):
-        result = subprocess.run(["python", "IV_Storage.py"])
-        st.success("VRP data updated!")
-
-
 # --- Page Config ---
 st.set_page_config(page_title="VRP Dashboard", layout="wide")
 
 # --- Title ---
 st.title("📊 Volatility Risk Premium (VRP) Dashboard")
+
+if st.sidebar.button("🔄 Refresh VRP Data"):
+    with st.spinner("Refreshing VRP data..."):
+        result = subprocess.run(["python", "IV_Storage.py"])
+        st.success("VRP data updated!")
 
 # --- DB Connection ---
 @st.cache_data

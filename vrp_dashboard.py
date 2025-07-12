@@ -3,6 +3,14 @@ import sqlite3
 import pandas as pd
 import plotly.express as px
 from datetime import datetime
+import os
+import subprocess
+
+if st.sidebar.button("🔄 Refresh VRP Data"):
+    with st.spinner("Refreshing VRP data..."):
+        result = subprocess.run(["python", "IV_Storage.py"])
+        st.success("VRP data updated!")
+
 
 # --- Page Config ---
 st.set_page_config(page_title="VRP Dashboard", layout="wide")
